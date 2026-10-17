@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>{{template "head" .}}</head>
+<body data-page="tasks">
+<div class="layout">
+  {{template "sidebar" .}}
+  <main class="content">
+    <header class="page-head">
+      <h1>任务</h1>
+      <span class="muted" id="updated-at"></span>
+    </header>
+
+    <section class="panel">
+      <h2>创建任务</h2>
+      <form id="task-form" class="task-form">
+        <textarea id="task-prompt" rows="3" placeholder="输入任务 Prompt，例如：现在几点了？ / 计算 1+2*3 / echo hello" required></textarea>
+        <div class="task-form-row">
+          <select id="task-agent">
+            <option value="">任意在线 Agent</option>
+          </select>
+          <button type="submit" class="btn" id="task-submit">下发任务</button>
+        </div>
+        <div class="form-error" id="form-error"></div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>任务列表</h2>
+      <table class="table">
+        <thead>
+          <tr><th>ID</th><th>Prompt</th><th>Agent</th><th>状态</th><th>耗时</th><th>创建时间</th></tr>
+        </thead>
+        <tbody id="task-list"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+{{template "scripts" .}}
+</body>
+</html>

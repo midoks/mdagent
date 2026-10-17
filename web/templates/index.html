@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>{{template "head" .}}</head>
+<body data-page="overview">
+<div class="layout">
+  {{template "sidebar" .}}
+  <main class="content">
+    <header class="page-head">
+      <h1>概览</h1>
+      <span class="muted" id="updated-at"></span>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <div class="card-label">在线 Agent</div>
+        <div class="card-value" id="stat-agents">-</div>
+      </div>
+      <div class="card">
+        <div class="card-label">任务总数</div>
+        <div class="card-value" id="stat-tasks">-</div>
+      </div>
+      <div class="card">
+        <div class="card-label">成功率</div>
+        <div class="card-value" id="stat-rate">-</div>
+      </div>
+      <div class="card">
+        <div class="card-label">今日任务</div>
+        <div class="card-value" id="stat-today">-</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>任务状态分布</h2>
+      <div class="dist" id="dist"></div>
+      <div class="dist-legend" id="dist-legend"></div>
+    </section>
+
+    <section class="panel">
+      <h2>最近任务 <a class="more" href="/tasks">全部 →</a></h2>
+      <table class="table">
+        <thead>
+          <tr><th>ID</th><th>Prompt</th><th>Agent</th><th>状态</th><th>创建时间</th></tr>
+        </thead>
+        <tbody id="recent-tasks"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+{{template "scripts" .}}
+</body>
+</html>

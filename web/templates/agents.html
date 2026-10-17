@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>{{template "head" .}}</head>
+<body data-page="agents">
+<div class="layout">
+  {{template "sidebar" .}}
+  <main class="content">
+    <header class="page-head">
+      <h1>Agent 节点</h1>
+      <span class="muted" id="updated-at"></span>
+    </header>
+    <section class="panel">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>名称</th><th>ID</th><th>状态</th><th>Provider</th><th>工具</th><th>已完成任务</th><th>最后心跳</th>
+          </tr>
+        </thead>
+        <tbody id="agent-list"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+{{template "scripts" .}}
+</body>
+</html>

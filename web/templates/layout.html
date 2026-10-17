@@ -1,0 +1,23 @@
+{{define "head"}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Title}} · mdagent</title>
+<link rel="stylesheet" href="/static/style.css">
+{{end}}
+
+{{define "sidebar"}}
+<aside class="sidebar">
+  <div class="brand">mdagent</div>
+  <nav class="nav">
+    <a href="/" class="{{if eq .Page "overview"}}active{{end}}">概览</a>
+    <a href="/agents" class="{{if eq .Page "agents"}}active{{end}}">Agent</a>
+    <a href="/tasks" class="{{if eq .Page "tasks"}}active{{end}}">任务</a>
+    <a href="/logs" class="{{if eq .Page "logs"}}active{{end}}">日志</a>
+  </nav>
+  <div class="sidebar-footer">Go Agent Framework</div>
+</aside>
+{{end}}
+
+{{define "scripts"}}
+<script src="/static/app.js"></script>
+{{end}}

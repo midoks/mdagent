@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>{{template "head" .}}</head>
+<body data-page="logs">
+<div class="layout">
+  {{template "sidebar" .}}
+  <main class="content">
+    <header class="page-head">
+      <h1>日志</h1>
+      <span class="muted" id="updated-at"></span>
+    </header>
+    <section class="panel">
+      <div class="toolbar">
+        <select id="log-level">
+          <option value="all">全部级别</option>
+          <option value="info">info</option>
+          <option value="warn">warn</option>
+          <option value="error">error</option>
+        </select>
+      </div>
+      <table class="table">
+        <thead>
+          <tr><th>时间</th><th>级别</th><th>来源</th><th>消息</th></tr>
+        </thead>
+        <tbody id="log-list"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+{{template "scripts" .}}
+</body>
+</html>
